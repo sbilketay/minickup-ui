@@ -58,6 +58,7 @@ export default {};
 .navbar .icon {
   position: absolute;
   display: flex;
+  right: 0px;
   align-items: center;
   justify-content: center;
   color: #fff;
@@ -65,9 +66,7 @@ export default {};
   width: 65px;
   box-sizing: border-box;
 }
-.navbar .icon-setting {
-  right: 10px;
-}
+
 .navbar .icon-bell {
   display: none;
   left: 0px;
