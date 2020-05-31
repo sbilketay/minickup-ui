@@ -3,7 +3,6 @@
     <Navbar />
     <div class="table-container">
       <Header />
-
       <div class="table-body">
         <file-row
           v-for="file in files"
@@ -16,6 +15,7 @@
           fa-status-icon="fas fa-check"
         />
       </div>
+      <BottomBar />
     </div>
   </div>
 </template>
@@ -24,12 +24,14 @@
 import Navbar from "../commons/Navbar";
 import FileRow from "../commons/FileRow";
 import Header from "../commons/Header";
+import BottomBar from "../commons/BottomBar";
 
 export default {
   components: {
     Navbar,
     FileRow,
-    Header
+    Header,
+    BottomBar
   },
   data() {
     return {
@@ -137,6 +139,7 @@ export default {
   top: 60px;
   display: flex;
   width: 100%;
+  margin-bottom: 60px;
 }
 
 .table-container .table-body {

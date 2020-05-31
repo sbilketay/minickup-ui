@@ -87,8 +87,8 @@ export default {
 .file-row-container .infos-content {
   display: block;
   font-size: 14px;
-  min-width: 300px;
-  padding-left: 5px;
+  min-width: 280px;
+  padding-left: 15px;
 }
 
 .file-row-container .infos-content .size {

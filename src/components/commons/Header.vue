@@ -38,7 +38,7 @@ export default {};
 }
 
 .head-infos {
-  min-width: 300px;
+  min-width: 280px;
 }
 
 .head-status {
