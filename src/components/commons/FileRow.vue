@@ -14,8 +14,10 @@
     </div>
     <div class="content status-content">
       <i :class="faStatusIcon" class="check-icon"></i>
-      <div v-show="active" class="hidden-icon">
-        <i class="hidden-fa fas fa-sliders-h"></i>
+      <div class="hidden-icons">
+        <div v-show="active" class="hidden-settings-icon">
+          <i class="hidden-fa fas fa-sliders-h"></i>
+        </div>
       </div>
     </div>
   </div>
@@ -41,7 +43,6 @@ export default {
 </script>
 
 <style scoped>
-
 .file-row-container {
   position: relative;
   top: 30px;
@@ -51,29 +52,26 @@ export default {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
+  height: 55px;
   cursor: pointer;
   z-index: 0;
 }
 
 .file-row-container:hover {
-  background: #d7e6ef;
-}
-
-.file-row-container .content {
-  padding: 10px 5px;
+  background: #f4f5f7;
 }
 
 .file-row-container .name-content {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 250px;
+  min-width: 250px;
 }
 
 .file-row-container .name-content-icon .icon {
   color: #6a6a6a;
   font-size: 27px;
-  padding-left: 10px;
+  padding-left: 15px;
   width: 50px;
 }
 
@@ -82,10 +80,15 @@ export default {
   font-size: 14px;
 }
 
+.file-row-container .name-content-label:hover {
+  text-decoration: underline;
+}
+
 .file-row-container .infos-content {
   display: block;
   font-size: 14px;
-  width: 300px;
+  min-width: 300px;
+  padding-left: 5px;
 }
 
 .file-row-container .infos-content .size {
@@ -94,33 +97,35 @@ export default {
 }
 
 .file-row-container .status-content {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  width: 30%;
-  padding: 0;
   font-size: 15px;
+  min-width: 200px;
 }
 
 .check-icon {
-  padding-left: 3px;
+  flex: 1;
   color: #60caad;
   font-size: 13px;
+  padding-left: 5px;
 }
 
-.hidden-icon {
+.hidden-icons .hidden-settings-icon {
+  flex: 3;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50px;
-  width: 50px;
+  height: 55px;
+  width: 55px;
   overflow: hidden;
   color: #6a6a6a;
   font-size: 20px;
 }
 
-.hidden-icon:hover {
+.hidden-icons .hidden-settings-icon:hover {
   color: #fff;
   background: #4790bb;
 }

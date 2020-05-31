@@ -23,20 +23,25 @@ export default {};
   width: 100%;
 }
 .head {
+  color: #555555;
   box-sizing: border-box;
   border-left: 1px solid #d7d7d7;
   height: 30px;
   background: #f4f5f7;
-  padding: 6px 20px;
+  padding: 6px 15px;
   font-weight: 400;
   font-size: 14px;
 }
 
 .head-name {
-  width: 250px;
+  min-width: 250px;
 }
 
 .head-infos {
-  width: 300px;
+  min-width: 300px;
+}
+
+.head-status {
+  min-width: 300px;
 }
 </style>

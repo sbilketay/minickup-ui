@@ -62,12 +62,11 @@ export default {};
   justify-content: center;
   color: #fff;
   font-size: 25px;
-  padding: 0px 20px;
   width: 65px;
   box-sizing: border-box;
 }
 .navbar .icon-setting {
-  right: 0px;
+  right: 10px;
 }
 .navbar .icon-bell {
   display: none;
