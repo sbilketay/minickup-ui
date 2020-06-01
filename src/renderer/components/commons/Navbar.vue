@@ -1,8 +1,5 @@
 <template>
   <div class="navbar">
-    <div class="icon icon-bell">
-      <i class="far fa-bell"></i>
-    </div>
     <div class="logo-header">
       <div class="logo-header-icon">
         <!-- <i class="fas fa-prescription-bottle"></i> -->
@@ -11,7 +8,7 @@
       </div>
       <div class="logo-header-label">minickup</div>
     </div>
-    <div class="icon icon-setting">
+    <div class="icon">
       <i class="fas fa-cog"></i>
     </div>
   </div>
@@ -33,7 +30,7 @@ export default {};
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
+  height: 50px;
   background: #fa776d;
 }
 
@@ -65,14 +62,9 @@ export default {};
   justify-content: center;
   color: #fff;
   font-size: 25px;
-  width: 65px;
+  width: 60px;
+  height: 60px;
   box-sizing: border-box;
-  cursor: pointer;
-}
-
-.navbar .icon-bell {
-  display: none;
-  left: 0px;
   cursor: pointer;
 }
 
@@ -81,7 +73,7 @@ export default {};
   background: #fc9d9a;
   font-size: 25px;
   padding: 0px 0px;
-  width: 65px;
+  width: 60px;
   height: 60px;
 }
 </style>
