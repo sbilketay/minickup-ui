@@ -15,6 +15,9 @@ export default {
 </script>
 
 <style>
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+
 body {
   font-family: "Roboto", "sans serif";
   color: #555555;

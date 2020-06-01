@@ -23,6 +23,8 @@ export default {};
 
 <style scoped>
 .navbar {
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
   position: fixed;
   width: 100vw;
   top: 0;
@@ -65,11 +67,13 @@ export default {};
   font-size: 25px;
   width: 65px;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .navbar .icon-bell {
   display: none;
   left: 0px;
+  cursor: pointer;
 }
 
 .navbar .icon:hover {
@@ -79,6 +83,5 @@ export default {};
   padding: 0px 0px;
   width: 65px;
   height: 60px;
-  cursor: pointer;
 }
 </style>

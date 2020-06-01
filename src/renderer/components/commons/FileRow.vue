@@ -52,7 +52,7 @@ export default {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  height: 55px;
+  height: 52px;
   cursor: pointer;
   z-index: 0;
 }
@@ -118,8 +118,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 55px;
-  width: 55px;
+  height: 52px;
+  width: 52px;
   overflow: hidden;
   color: #6a6a6a;
   font-size: 20px;
