@@ -1,5 +1,6 @@
 # minickup-ui
 
+<img src="https://raw.githubusercontent.com/sbilketay/minickup-ui/master/ss-2.png" width="450"/> <img src="https://raw.githubusercontent.com/sbilketay/minickup-ui/master/ss-1.png" width="450"/>
 > An electron-vue project
 
 #### Build Setup
