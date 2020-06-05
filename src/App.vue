@@ -1,15 +1,21 @@
 <template>
   <div id="app">
-    <MainPage />
+    <!-- <BlankPage /> -->
+    <!-- <MainPage /> -->
+    <AddBackupPage />
   </div>
 </template>
 
 <script>
-import MainPage from "./components/pages/MainPage";
+// import BlankPage from "./components/pages/BlankPage";
+// import MainPage from "./components/pages/MainPage";
+import AddBackupPage from "./components/pages/AddBackupPage";
 export default {
   name: "App",
   components: {
-    MainPage
+    // BlankPage
+    // MainPage,
+    AddBackupPage
   }
 };
 </script>
@@ -20,10 +26,11 @@ export default {
 
 body {
   font-family: "Roboto", "sans serif";
-  color: #555555;
+  color: #5B5B5B;
   background: #fff;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 </style>

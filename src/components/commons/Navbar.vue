@@ -30,7 +30,7 @@ export default {};
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50px;
+  height: 60px;
   background: #fa776d;
 }
 
@@ -70,7 +70,7 @@ export default {};
 
 .navbar .icon:hover {
   color: #fff;
-  background: #fc9d9a;
+  background: #6088C6;
   font-size: 25px;
   padding: 0px 0px;
   width: 60px;

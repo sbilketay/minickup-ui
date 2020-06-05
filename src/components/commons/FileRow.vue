@@ -69,7 +69,7 @@ export default {
 }
 
 .file-row-container .name-content-icon .icon {
-  color: #6a6a6a;
+  color: #5B5B5B;
   font-size: 27px;
   padding-left: 15px;
   width: 50px;
@@ -108,7 +108,7 @@ export default {
 
 .check-icon {
   flex: 1;
-  color: #60caad;
+  color: #6088C6;
   font-size: 13px;
   padding-left: 5px;
 }
@@ -120,13 +120,12 @@ export default {
   justify-content: center;
   height: 52px;
   width: 52px;
-  overflow: hidden;
   color: #6a6a6a;
   font-size: 20px;
 }
 
 .hidden-icons .hidden-settings-icon:hover {
   color: #fff;
-  background: #4790bb;
+  background: #6088C6;
 }
 </style>
