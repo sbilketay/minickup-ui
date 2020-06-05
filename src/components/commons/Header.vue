@@ -1,5 +1,5 @@
 <template>
-  <div class="header-container">
+  <div :class="hiddenClass" class="header-container">
     <div class="head head-name">Name</div>
     <div class="head head-infos">Infos</div>
     <div class="head head-status">Status</div>
@@ -7,7 +7,19 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["index"],
+  data() {
+    return {
+      hiddenClass: null
+    };
+  },
+  created() {
+    if (this.index < 0) {
+      this.hiddenClass = 'header-container-opacity'
+    }
+  }
+};
 </script>
 
 <style>
@@ -17,11 +29,17 @@ export default {};
   align-items: center;
   justify-content: flex-start;
   top: 60px;
+  z-index: 2;
   background: #f4f5f7;
   border-bottom: 1px solid #d7d7d7;
-  z-index: 2;
   width: 100%;
 }
+
+.header-container-opacity {
+  z-index: -1;
+  filter: blur(0.08rem);
+}
+
 .head {
   color: #555555;
   box-sizing: border-box;

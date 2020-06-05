@@ -3,17 +3,19 @@
     <Navbar />
     <div class="table-container">
       <Header />
-      <div class="table-body">
-        <file-row
-          v-for="file in files"
-          :key="file.name"
-          :fa-folder-icon="file.icon"
-          :name="file.name"
-          :date="file.date"
-          :total-file="file.total_file"
-          :size="file.size"
-          fa-status-icon="fas fa-check"
-        />
+      <div class="scroll-table">
+        <div class="table-body">
+          <file-row
+            v-for="file in files"
+            :key="file.name"
+            :fa-folder-icon="file.icon"
+            :name="file.name"
+            :date="file.date"
+            :total-file="file.total_file"
+            :size="file.size"
+            fa-status-icon="fas fa-check"
+          />
+        </div>
       </div>
       <BottomBar />
     </div>
@@ -115,6 +117,30 @@ export default {
           total_file: "17",
           size: "252,00 MB",
           status_icon: "fas fa-check"
+        },
+        {
+          icon: "fab fab fa-sketch",
+          name: "Sketch Projects",
+          date: "01-02-2020 01:05",
+          total_file: "17",
+          size: "252,00 MB",
+          status_icon: "fas fa-check"
+        },
+        {
+          icon: "fab fab fa-sketch",
+          name: "Sketch Projects",
+          date: "01-02-2020 01:05",
+          total_file: "17",
+          size: "252,00 MB",
+          status_icon: "fas fa-check"
+        },
+        {
+          icon: "fab fab fa-sketch",
+          name: "Projects",
+          date: "01-02-2020 01:05",
+          total_file: "17",
+          size: "252,00 MB",
+          status_icon: "fas fa-check"
         }
       ],
       active: false,
@@ -139,11 +165,17 @@ export default {
   top: 60px;
   display: flex;
   width: 100%;
-  margin-bottom: 60px;
+}
+
+.scroll-table {
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
 }
 
 .table-container .table-body {
   width: 100%;
   display: block;
+  margin-bottom: 120px;
 }
 </style>
