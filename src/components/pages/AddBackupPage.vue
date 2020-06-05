@@ -1,6 +1,5 @@
 <template>
   <div class="add-backup-container">
-    Sela
     <div class="backup-settings"></div>
     <Navbar />
     <Header index="-1" />
@@ -23,7 +22,7 @@ export default {
 
 <style scoped>
 .backup-settings {
-  margin-top: 40px;
+  margin-top: 60px;
   z-index: 3;
   background-color: #000;
   opacity: 0.65;
