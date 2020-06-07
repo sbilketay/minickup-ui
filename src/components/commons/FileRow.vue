@@ -59,6 +59,7 @@ export default {
 
 .file-row-container:hover {
   background: #f4f5f7;
+  transition: 110ms;
 }
 
 .file-row-container .name-content {
@@ -127,5 +128,6 @@ export default {
 .hidden-icons .hidden-settings-icon:hover {
   color: #fff;
   background: #0ca5fb;
+  transition: 120ms;
 }
 </style>
