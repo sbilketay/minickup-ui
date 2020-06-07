@@ -7,7 +7,7 @@
       <div class="backup-settings"></div>
       <div class="content-card">
         <div class="card-header">
-          <i class="icon fas fa-folder"></i>
+          <i class="icon fas fa-folder-plus"></i>
           <div class="header-spacer"></div>
           <div class="header-label">
             <div class="label-header">Backup - Books</div>
@@ -18,8 +18,28 @@
           </div>
         </div>
         <div class="target-button-container">
-          <div class="target-button">
+          <!-- Select Files Button -->
+          <!-- <div class="target-button">
             <i class="target-icon fas fa-folder-open"></i> Select Backup Target
+          </div>-->
+
+          <!-- Select Icons Button -->
+          <!-- <div class="select-icon-container">
+            <span>Select Icon</span>
+            <div class="select-icon">
+              <div class="icon-list">
+                <i class="icon fas fa-folder"></i>
+              </div>
+              <div class="icon-label">- Folder -</div>
+              <div class="arrow">
+                <i class="fas fa-sort-down"></i>
+              </div>
+            </div>
+          </div>-->
+
+          <!-- Select Ignore Files Button -->
+          <div class="ignore-button">
+            <i class="ignore-icon fas fa-virus"></i> Select Ignore Files
           </div>
         </div>
       </div>
@@ -42,6 +62,7 @@ export default {
 
 <style scoped>
 .add-backup-container {
+  -webkit-user-select: none;
   position: relative;
 }
 
@@ -150,6 +171,63 @@ export default {
   justify-content: center;
 }
 
+.content-card .select-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-card .select-icon-container span {
+  font-size: 17px;
+  color: #959596;
+}
+
+.content-card .select-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px 0px;
+  padding: 10px 0px;
+  box-sizing: border-box;
+  background-color: #f4f5f7;
+  border: 1px solid #d7d7d7;
+  width: 250px;
+  height: 60px;
+  border-radius: 3px;
+}
+
+.content-card .select-icon .icon-list {
+  display: flex;
+  flex-direction: column;
+  font-size: 40px;
+  padding: 10px 15px;
+}
+
+.content-card .select-icon .icon-label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  font-size: 20px;
+  width: 50%;
+}
+
+.content-card .select-icon .arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border-left: 1px solid #d7d7d7;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.content-card .select-icon .arrow:hover {
+  background-color: #0ca5fb;
+  color: #fff;
+}
+
 .content-card .target-button-container .target-button {
   display: flex;
   align-items: center;
@@ -159,7 +237,6 @@ export default {
   background-color: #0ca5fb;
   color: #fff;
   cursor: pointer;
-  -webkit-user-select: none;
   box-shadow: 0px 2px 10px #959596;
   border-radius: 3px;
 }
@@ -170,6 +247,29 @@ export default {
 }
 
 .content-card .target-button-container .target-button .target-icon {
+  padding-right: 10px;
+  font-size: 22px;
+}
+
+.content-card .target-button-container .ignore-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 210px;
+  height: 60px;
+  background-color: #F56F65;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0px 2px 10px #959596;
+  border-radius: 3px;
+}
+
+.content-card .target-button-container .ignore-button:active {
+  cursor: pointer;
+  transform: scale(0.98);
+}
+
+.content-card .target-button-container .ignore-button .ignore-icon {
   padding-right: 10px;
   font-size: 22px;
 }
