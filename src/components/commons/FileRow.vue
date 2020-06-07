@@ -126,6 +126,6 @@ export default {
 
 .hidden-icons .hidden-settings-icon:hover {
   color: #fff;
-  background: #6088C6;
+  background: #0ca5fb;
 }
 </style>

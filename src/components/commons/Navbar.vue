@@ -70,7 +70,7 @@ export default {};
 
 .navbar .icon:hover {
   color: #fff;
-  background: #6088C6;
+  background: #0ca5fb;
   font-size: 25px;
   padding: 0px 0px;
   width: 60px;
