@@ -7,7 +7,7 @@ function createWindow() {
     // Tarayıcı penceresini oluştur.
     const win = new BrowserWindow({
         width: 770,
-        height: 620,
+        height: 640,
         frame: false,
         titleBarStyle: 'hidden',
         webPreferences: {
@@ -17,7 +17,7 @@ function createWindow() {
         }
     })
 
-    win.setMinimumSize(770, 620)
+    win.setMinimumSize(770, 640)
     win.closeDevTools();
 
     ipcMain.on('key', (error, data) => {
