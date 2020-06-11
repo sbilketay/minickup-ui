@@ -42,6 +42,7 @@ export default {
 }
 
 .bottom-bar-container-opacity {
+  opacity: 0.3;
   filter: blur(0.09rem);
 }
 
