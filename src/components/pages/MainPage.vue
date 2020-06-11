@@ -118,30 +118,6 @@ export default {
           size: "252,00 MB",
           status_icon: "fas fa-check"
         },
-        {
-          icon: "fab fab fa-sketch",
-          name: "Sketch Projects",
-          date: "01-02-2020 01:05",
-          total_file: "17",
-          size: "252,00 MB",
-          status_icon: "fas fa-check"
-        },
-        {
-          icon: "fab fab fa-sketch",
-          name: "Sketch Projects",
-          date: "01-02-2020 01:05",
-          total_file: "17",
-          size: "252,00 MB",
-          status_icon: "fas fa-check"
-        },
-        {
-          icon: "fab fab fa-sketch",
-          name: "Projects",
-          date: "01-02-2020 01:05",
-          total_file: "17",
-          size: "252,00 MB",
-          status_icon: "fas fa-check"
-        }
       ],
       active: false,
       displayIcon: "hidden-icon"
