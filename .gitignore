@@ -67,5 +67,5 @@ ts-gen
 .depshash
 .depshash-target
 #Electron-builder output
-dist
-dist_electron
+/dist
+/dist_electron
