@@ -80,10 +80,6 @@ export default {
   transition: opacity 0.35s;
 }
 
-.fade-leave {
-  /* opacity: 1; */
-}
-
 .fade-leave-active {
   transition: opacity 0.35s;
   opacity: 0;

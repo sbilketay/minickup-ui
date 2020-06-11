@@ -14,39 +14,55 @@
             <i class="fas fa-times"></i>
           </div>
         </div>
-        <div class="target-button-container">
+        <transition name="fade" mode="out-in">
           <!-- Select Files Button -->
-          <div class="target-button">
-            <i class="target-icon fas fa-folder-open"></i> Select Backup Target
+          <div class="target-button-container" v-if="!iconContainer" key="backup">
+            <div class="target-button" @click="$refs.file.click()">
+              <input
+                type="file"
+                ref="file"
+                webkitdirectory
+                directory
+                multiple
+                @change="selectBackupTarget($event)"
+                class="file-input"
+              />
+              <i class="target-icon fas fa-folder-open"></i> Select Backup Target
+            </div>
           </div>
 
           <!-- Select Icons Button -->
-          <!-- <div class="select-icon-container">
-            <span>Select Icon</span>
-            <div class="select-icon">
-              <div class="icon-list">
-                <i class="icon fas fa-folder"></i>
+          <div class="icons-button-container" v-else key="icon">
+            <div class="select-icon-container">
+              <span>Select Icon</span>
+              <div class="select-icon">
+                <div class="icon-list">
+                  <i class="icon fas fa-folder"></i>
+                </div>
+                <div class="icon-label">Folder</div>
+                <div class="arrow">
+                  <i class="fas fa-sort-down"></i>
+                </div>
               </div>
-              <div class="icon-label">Folder</div>
-              <div class="arrow">
-                <i class="fas fa-sort-down"></i>
+              <div class="ignore-file-container">
+                <span>Add Ignore Files</span>
+                <div class="input-container">
+                  <input type="text" />
+                  <button>
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+                <div class="added-area">No Ignored File</div>
+              </div>
+              <div class="back-button">
+                <button @click="iconContainer = !iconContainer">Back</button>
+              </div>
+              <div class="bottom-button">
+                <button>Save</button>
               </div>
             </div>
-            <div class="ignore-file-container">
-              <span>Add Ignore Files</span>
-              <div class="input-container">
-                <input type="text" />
-                <button>
-                  <i class="fas fa-plus"></i>
-                </button>
-              </div>
-              <div class="added-area">No Ignored File</div>
-            </div>
-          </div>-->
-          <!-- <div class="bottom-button">
-            <button>Save</button>
-          </div>-->
-        </div>
+          </div>
+        </transition>
       </div>
     </div>
   </div>
@@ -55,15 +71,33 @@
 <script>
 export default {
   props: ["name", "path"],
+  data() {
+    return {
+      iconContainer: false,
+      backupPath: null
+    };
+  },
   methods: {
     closeCard() {
       this.$emit("close-card", true);
+    },
+    selectBackupTarget(event) {
+      const getPaths = event.target.files[0].path;
+      const getName = event.target.files[0].name;
+      this.backupPath = getPaths.split(getName)[0];
+      if (this.backupPath) {
+        this.iconContainer = !this.iconContainer;
+      }
     }
   }
 };
 </script>
 
 <style scoped>
+.file-input {
+  display: none;
+}
+
 .content-container {
   position: relative;
   display: flex;
@@ -92,7 +126,7 @@ export default {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   background-color: #fff;
   width: 600px;
@@ -167,7 +201,17 @@ export default {
   height: 90%;
   width: 100%;
   display: flex;
+  margin-top: 25px;
   align-items: center;
+  justify-content: center;
+}
+
+.icons-button-container {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  margin-top: 25px;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -324,7 +368,7 @@ export default {
   overflow-y: auto;
   overflow-x: hidden;
   width: 250px;
-  height: 120px;
+  height: 100px;
   padding: 10px;
   box-sizing: border-box;
   border: 1px solid #d7d7d7;
@@ -358,6 +402,30 @@ export default {
 
 .bottom-button button:hover {
   background-color: #0a91df;
+}
+
+.back-button button {
+  position: absolute;
+  right: 100px;
+  top: 390px;
+  width: 80px;
+  height: 35px;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  background-color: #6ac1b7;
+  outline: none;
+  font-size: 14px;
+  transition: 200ms;
+  cursor: pointer;
+}
+
+.back-button button:active {
+  transform: scale(0.95);
+}
+
+.back-button button:hover {
+  background-color: #5da797;
 }
 
 .add-backup-container {
