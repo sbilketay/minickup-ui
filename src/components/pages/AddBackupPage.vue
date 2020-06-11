@@ -4,7 +4,7 @@
     <Header index="-1" />
     <BottomBar index="-1" />
     <div class="content-container">
-      <div class="backup-settings"></div>
+      <div class="background-shadow"></div>
       <div class="content-card">
         <div class="card-header">
           <i class="icon fas fa-folder-plus"></i>
@@ -24,22 +24,30 @@
           </div>-->
 
           <!-- Select Icons Button -->
-          <!-- <div class="select-icon-container">
+          <div class="select-icon-container">
             <span>Select Icon</span>
             <div class="select-icon">
               <div class="icon-list">
                 <i class="icon fas fa-folder"></i>
               </div>
-              <div class="icon-label">- Folder -</div>
+              <div class="icon-label">Folder</div>
               <div class="arrow">
                 <i class="fas fa-sort-down"></i>
               </div>
             </div>
-          </div>-->
-
-          <!-- Select Ignore Files Button -->
-          <div class="ignore-button">
-            <i class="ignore-icon fas fa-virus"></i> Select Ignore Files
+            <div class="ignore-file-container">
+              <span>Add Ignore Files</span>
+              <div class="input-container">
+                <input type="text" />
+                <button>
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+              <div class="added-area">No Ignored File</div>
+            </div>
+          </div>
+          <div class="bottom-button">
+            <button>Save</button>
           </div>
         </div>
       </div>
@@ -61,13 +69,37 @@ export default {
 </script>
 
 <style scoped>
+.bottom-button button {
+  position: absolute;
+  right: 15px;
+  top: 390px;
+  width: 80px;
+  height: 35px;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  background-color: #0ca5fb;
+  outline: none;
+  font-size: 14px;
+  transition: 200ms;
+  cursor: pointer;
+}
+
+.bottom-button button:active {
+  transform: scale(0.95);
+}
+
+.bottom-button button:hover {
+  background-color: #0a91df;
+}
+
 .add-backup-container {
   -webkit-user-select: none;
   position: relative;
 }
 
 .content-container {
-  position: absolute;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,7 +108,7 @@ export default {
   height: 100vh;
 }
 
-.backup-settings {
+.background-shadow {
   position: absolute;
   display: flex;
   align-items: center;
@@ -89,6 +121,8 @@ export default {
 }
 
 .content-card {
+  position: relative;
+  margin-top: 50px;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -96,7 +130,7 @@ export default {
   justify-content: flex-start;
   background-color: #fff;
   width: 600px;
-  height: 300px;
+  height: 440px;
   border-radius: 5px;
   box-sizing: border-box;
 }
@@ -180,6 +214,7 @@ export default {
 .content-card .select-icon-container span {
   font-size: 17px;
   color: #959596;
+  align-self: flex-start;
 }
 
 .content-card .select-icon {
@@ -189,18 +224,19 @@ export default {
   margin: 10px 0px;
   padding: 10px 0px;
   box-sizing: border-box;
-  background-color: #f4f5f7;
+  background-color: #fff;
   border: 1px solid #d7d7d7;
   width: 250px;
-  height: 60px;
+  height: 40px;
   border-radius: 3px;
 }
 
 .content-card .select-icon .icon-list {
   display: flex;
   flex-direction: column;
-  font-size: 40px;
-  padding: 10px 15px;
+  font-size: 30px;
+  padding: 10px 20px;
+  color: #626262;
 }
 
 .content-card .select-icon .icon-label {
@@ -208,18 +244,24 @@ export default {
   align-items: center;
   justify-content: flex-start;
   box-sizing: border-box;
-  font-size: 20px;
-  width: 50%;
+  font-size: 17px;
+  width: 60%;
+  color: #626262;
+}
+
+.content-card .select-icon .arrow i {
+  top: 20%;
+  left: 35%;
+  padding-top: 0px;
+  position: absolute;
 }
 
 .content-card .select-icon .arrow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
+  font-size: 19px;
+  position: relative;
   border-left: 1px solid #d7d7d7;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
 }
 
@@ -234,8 +276,8 @@ export default {
   justify-content: center;
   width: 210px;
   height: 60px;
-  background-color: #0ca5fb;
-  color: #fff;
+  background-color: #f2f3f6;
+  color: #555555;
   cursor: pointer;
   box-shadow: 0px 2px 10px #959596;
   border-radius: 3px;
@@ -251,26 +293,71 @@ export default {
   font-size: 22px;
 }
 
-.content-card .target-button-container .ignore-button {
+.ignore-file-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ignore-file-container span {
+  font-size: 17px;
+  color: #959596;
+  align-self: flex-start;
+  padding: 7px 0px;
+}
+
+.ignore-file-container .input-container {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.ignore-file-container .input-container input {
+  outline: none;
+  font-size: 17px;
+  width: 210px;
+  height: 40px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #d7d7d7;
+  border-top-left-radius: 3px;
+}
+
+.ignore-file-container .input-container button {
+  outline: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #d7d7d7;
+  background-color: #fff;
+  border-top-right-radius: 3px;
+  border-left: none;
+  cursor: pointer;
+  transition: 100ms;
+}
+
+.ignore-file-container .input-container button:hover {
+  background-color: #0ca5fb;
+  color: #fff;
+}
+
+.ignore-file-container .input-container button:active {
+  background-color: #6cc0f0;
+}
+
+.ignore-file-container .added-area {
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 250px;
+  height: 120px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #d7d7d7;
+  border-top: none;
+  background-color: #fff;
+  color: #9d9d9e;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 210px;
-  height: 60px;
-  background-color: #F56F65;
-  color: #fff;
-  cursor: pointer;
-  box-shadow: 0px 2px 10px #959596;
-  border-radius: 3px;
-}
-
-.content-card .target-button-container .ignore-button:active {
-  cursor: pointer;
-  transform: scale(0.98);
-}
-
-.content-card .target-button-container .ignore-button .ignore-icon {
-  padding-right: 10px;
-  font-size: 22px;
 }
 </style>
