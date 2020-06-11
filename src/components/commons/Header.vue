@@ -14,9 +14,13 @@ export default {
       hiddenClass: null
     };
   },
-  created() {
-    if (this.index < 0) {
-      this.hiddenClass = 'header-container-opacity'
+  watch: {
+    index() {
+      if (this.index) {
+        this.hiddenClass = "header-container-opacity";
+      } else {
+        this.hiddenClass = "header-container";
+      }
     }
   }
 };
@@ -36,8 +40,8 @@ export default {
 }
 
 .header-container-opacity {
-  z-index: -1;
-  filter: blur(0.08rem);
+  opacity: 0.3;
+  filter: blur(0.09rem);
 }
 
 .head {

@@ -12,9 +12,13 @@ export default {
       hiddenClass: null
     };
   },
-  created() {
-    if (this.index < 0) {
-      this.hiddenClass = "bottom-bar-container-opacity";
+  watch: {
+    index() {
+      if (this.index) {
+        this.hiddenClass = "bottom-bar-container-opacity";
+      } else {
+        this.hiddenClass = "bottom-bar-container";
+      }
     }
   }
 };
@@ -38,8 +42,7 @@ export default {
 }
 
 .bottom-bar-container-opacity {
-  z-index: -1;
-  filter: blur(0.08rem);
+  filter: blur(0.09rem);
 }
 
 .bottom-bar-label {

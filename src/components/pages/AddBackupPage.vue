@@ -1,8 +1,5 @@
 <template>
   <div class="add-backup-container">
-    <Navbar />
-    <Header index="-1" />
-    <BottomBar index="-1" />
     <div class="content-container">
       <div class="background-shadow"></div>
       <div class="content-card">
@@ -10,21 +7,21 @@
           <i class="icon fas fa-folder-plus"></i>
           <div class="header-spacer"></div>
           <div class="header-label">
-            <div class="label-header">Backup - Books</div>
-            <div class="label-path">/User/wisecolt-nas/Documents/Books</div>
+            <div class="label-header">Backup - {{ name }}</div>
+            <div class="label-path">{{ path }}</div>
           </div>
-          <div class="close-button">
+          <div class="close-button" @click="closeCard()">
             <i class="fas fa-times"></i>
           </div>
         </div>
         <div class="target-button-container">
           <!-- Select Files Button -->
-          <!-- <div class="target-button">
+          <div class="target-button">
             <i class="target-icon fas fa-folder-open"></i> Select Backup Target
-          </div>-->
+          </div>
 
           <!-- Select Icons Button -->
-          <div class="select-icon-container">
+          <!-- <div class="select-icon-container">
             <span>Select Icon</span>
             <div class="select-icon">
               <div class="icon-list">
@@ -45,10 +42,10 @@
               </div>
               <div class="added-area">No Ignored File</div>
             </div>
-          </div>
-          <div class="bottom-button">
+          </div>-->
+          <!-- <div class="bottom-button">
             <button>Save</button>
-          </div>
+          </div>-->
         </div>
       </div>
     </div>
@@ -56,55 +53,24 @@
 </template>
 
 <script>
-import Navbar from "../commons/Navbar";
-import Header from "../commons/Header";
-import BottomBar from "../commons/BottomBar";
 export default {
-  components: {
-    Navbar,
-    BottomBar,
-    Header
+  props: ["name", "path"],
+  methods: {
+    closeCard() {
+      this.$emit("close-card", true);
+    }
   }
 };
 </script>
 
 <style scoped>
-.bottom-button button {
-  position: absolute;
-  right: 15px;
-  top: 390px;
-  width: 80px;
-  height: 35px;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  background-color: #0ca5fb;
-  outline: none;
-  font-size: 14px;
-  transition: 200ms;
-  cursor: pointer;
-}
-
-.bottom-button button:active {
-  transform: scale(0.95);
-}
-
-.bottom-button button:hover {
-  background-color: #0a91df;
-}
-
-.add-backup-container {
-  -webkit-user-select: none;
-  position: relative;
-}
-
 .content-container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 
@@ -116,13 +82,13 @@ export default {
   justify-content: center;
   background-color: #000;
   opacity: 0.64;
+  margin-top: 30px;
   width: 100%;
   height: 100vh;
 }
 
 .content-card {
   position: relative;
-  margin-top: 50px;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -281,11 +247,15 @@ export default {
   justify-content: center;
   width: 210px;
   height: 60px;
-  background-color: #f2f3f6;
-  color: #555555;
+  background-color: #0ca5fb;
+  color: #fff;
   cursor: pointer;
   box-shadow: 0px 2px 10px #959596;
   border-radius: 3px;
+}
+
+.content-card .target-button-container .target-button:hover {
+  background-color: #0a91df;
 }
 
 .content-card .target-button-container .target-button:active {
@@ -364,5 +334,34 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.bottom-button button {
+  position: absolute;
+  right: 15px;
+  top: 390px;
+  width: 80px;
+  height: 35px;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  background-color: #0ca5fb;
+  outline: none;
+  font-size: 14px;
+  transition: 200ms;
+  cursor: pointer;
+}
+
+.bottom-button button:active {
+  transform: scale(0.95);
+}
+
+.bottom-button button:hover {
+  background-color: #0a91df;
+}
+
+.add-backup-container {
+  -webkit-user-select: none;
+  position: relative;
 }
 </style>
