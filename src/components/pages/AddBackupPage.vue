@@ -263,11 +263,16 @@ export default {
   width: 40px;
   height: 40px;
   cursor: pointer;
+  transition: 200ms;
 }
 
 .content-card .select-icon .arrow:hover {
   background-color: #0ca5fb;
   color: #fff;
+}
+
+.content-card .select-icon .arrow:active {
+  background-color: #6cc0f0;
 }
 
 .content-card .target-button-container .target-button {

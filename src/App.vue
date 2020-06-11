@@ -1,21 +1,21 @@
 <template>
   <div id="app">
-    <!-- <BlankPage /> -->
+    <BlankPage />
     <!-- <MainPage /> -->
-    <AddBackupPage />
+    <!-- <AddBackupPage /> -->
   </div>
 </template>
 
 <script>
-// import BlankPage from "./components/pages/BlankPage";
+import BlankPage from "./components/pages/BlankPage";
 // import MainPage from "./components/pages/MainPage";
-import AddBackupPage from "./components/pages/AddBackupPage";
+// import AddBackupPage from "./components/pages/AddBackupPage";
 export default {
   name: "App",
   components: {
-    // BlankPage
+    BlankPage
     // MainPage,
-    AddBackupPage
+    // AddBackupPage
   }
 };
 </script>

@@ -1,8 +1,8 @@
 <template>
-  <div class="blank-page-container">
+  <div class="blank-page-container" @dragover.prevent>
     <Navbar />
     <Header />
-    <div class="drag-drop-container">
+    <div class="drag-drop-container" v-cloak @dragover.prevent @drop.prevent="drag">
       <!-- <i class="icon fas fa-bong"></i> -->
       <i class="icon fab fa-optin-monster"></i>
       <span class="label">Drag & Drop</span>
@@ -22,6 +22,14 @@ export default {
     Navbar,
     BottomBar,
     Header
+  },
+  methods: {
+    drag(event) {
+      console.log(event.dataTransfer.files);
+    },
+    addFile(event) {
+      console.log(event.target.files);
+    }
   }
   //   methods: {
   //     sendMessage() {
@@ -32,6 +40,11 @@ export default {
 </script>
 
 <style scoped>
+.file {
+  z-index: 10000;
+  /* display: none; */
+}
+
 .blank-page-container {
   position: relative;
   padding-top: 60px;
